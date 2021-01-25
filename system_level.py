@@ -1,3 +1,7 @@
+!pip install Meshpy
+!pip install Solidspy
+!pip install trimesh
+
 import numpy as np
 import meshpy.triangle as triangle
 import trimesh
