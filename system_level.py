@@ -2,6 +2,7 @@ import numpy as np
 import meshpy.triangle as triangle
 import trimesh
 from solidspy import solids_GUI
+from basic_fun import *
 
 def globle_vars():
   pts,f_pts,f_mag,all_pts,bounds = init_fix_p(show=False) 
@@ -50,22 +51,4 @@ def params_noise(params,sigma=1,pop_size=10):
       J_list.append(J)
 
   #sorting according to J 
-  j_params_list = zip(J_list, params_list)
-  sorted_j_params_list = sorted(j_params_list, key = lambda x: x[0])  # take j value for sorting
-  J_list, params_list = zip(*sorted_j_params_list)
-
-  return params_list,J_list
-
-def best_params(params_list,n_top=1):
-  tmp_params = np.stack(params_list[:n_top],axis=0).mean(axis=0)
-  tmp_params = params_check(tmp_params)
-  J = system(tmp_params)
-  if J is not False:
-    print('J value is : ', J)
-    return tmp_params
-  else:
-    print('not updated')
-    return np.copy(params_list[0])
-
-def sigma_update(sigma,decay_rate=0.98):
-  return sigma*decay_rate
+  j_params_
