@@ -2,7 +2,7 @@ import numpy as np
 import meshpy.triangle as triangle
 import trimesh
 from solidspy import solids_GUI
-from basic_fun import *
+from .basic_fun import *
 
 def globle_vars():
   pts,f_pts,f_mag,all_pts,bounds = init_fix_p(show=False) 
